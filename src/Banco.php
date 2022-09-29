@@ -13,7 +13,7 @@ class Banco{
     private $porta;
 
     public function __construct() {
-        $data = [];
+        $data = require_once __DIR__ . "/config.php";
         $this->host = $data['host'];
         $this->user = $data['user'];
         $this->pass = $data['pass'];
