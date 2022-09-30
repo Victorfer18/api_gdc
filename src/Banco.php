@@ -16,8 +16,8 @@ class Banco{
         $data = require_once __DIR__ . "/config.php";
         $this->host = $data['host'];
         $this->user = $data['user'];
-        $this->pass = $data['pass'];
-        $this->db = $data['db'];
+        $this->pass = $data['senha'];
+        $this->db = $data['banco'];
     }
 
     public function error(){
@@ -31,7 +31,7 @@ class Banco{
     public function connection_pdo(){
         return new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
     }
-
+    
     function query(string $sql): array{
         try {
             $con = Banco::connection_pdo();

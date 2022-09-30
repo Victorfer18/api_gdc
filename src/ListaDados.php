@@ -3,15 +3,26 @@
 class ListaDados{
     
     static function get_dados_by_data(){
-        $token = new Token();
-        // $banco = new Banco();
+        
+        $banco = new Banco();
         $get_token = $_REQUEST['token'] ?? null;
         $data = $_REQUEST['data'] ?? null;
-        if(empty($token) and empty($data)){
+        
+        if(empty($get_token) or empty($data)){
             echo json_encode([
                 "next" => false,
                 "message" => "Informe o Token e a Data!",
-                "payload" => []//$banco->query("SELECT * FROM banco WHERE data='$data'")
+                "payload" => []
+            ]);    
+            die;
+        }
+        $base_token = "N3uohCJ8kKhTMaNVhIpZU8C1tN7OOBEr7QgFBlVak1I";
+        
+        if($get_token != $base_token){
+            echo json_encode([
+                "next" => false,
+                "message" => "Token Invalido!",
+                "payload" => []
             ]);    
             die;
         }
@@ -20,8 +31,8 @@ class ListaDados{
             "message" => "Todos os Dados",
             "payload" => [
                 "token" => $get_token,
-                "data" => $data
-            ]//$banco->query("SELECT * FROM banco WHERE data='$data'")
+                "tabelas" => $banco->query("SELECT * FROM Prc_ASO")
+            ]
         ]);
     }
     

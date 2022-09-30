@@ -1,9 +1,18 @@
 <?php
 
+// return [
+//     "host" => "sql362.main-hosting.eu",
+//     "banco" => "EvidaAPI",
+//     "user" => "u925461440_evidaApi",
+//     "senha" => "hD0THedGU=",
+//     "token" => "N3uohCJ8kKhTMaNVhIpZU8C1tN7OOBEr7QgFBlVak1I",
+// ];
+
+
 return [
-    'host' => "99.999.999.99",
-    'user' => "dddddd",
-    'pass' => "f43wwefw5t4", 
-    'db' => "banco",
-    "hast" => "WyJnZXREYWRvcyJd.f76a32e22130acb59bb0640312b541351fc13708"
+    "host" => "10.35.253.45",
+    "banco" => "gdc",
+    "user" => 'cmed',
+    "senha" => 'Cmed$Cmed$',
+    "token" => "N3uohCJ8kKhTMaNVhIpZU8C1tN7OOBEr7QgFBlVak1I",
 ];
