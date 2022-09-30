@@ -1,13 +1,11 @@
 <?php
 
 class ListaDados{
-    
     static function get_dados_by_data(){
-        
         $banco = new Banco();
-        $get_token = $_REQUEST['token'] ?? null;
-        $data = $_REQUEST['data'] ?? null;
-        
+        $get_token = $_REQUEST['token'];
+        $data = $_REQUEST['data'];
+        $base_token = "N3uohCJ8kKhTMaNVhIpZU8C1tN7OOBEr7QgFBlVak1I";
         if(empty($get_token) or empty($data)){
             echo json_encode([
                 "next" => false,
@@ -16,8 +14,6 @@ class ListaDados{
             ]);    
             die;
         }
-        $base_token = "N3uohCJ8kKhTMaNVhIpZU8C1tN7OOBEr7QgFBlVak1I";
-        
         if($get_token != $base_token){
             echo json_encode([
                 "next" => false,
@@ -30,11 +26,13 @@ class ListaDados{
             "next" => true,
             "message" => "Todos os Dados",
             "payload" => [
-                "token" => $get_token,
-                "tabelas" => $banco->query("SELECT * FROM Prc_ASO")
+                "tabelas" => [
+                    "Prc_ASO" => $banco->query("SELECT * FROM Prc_ASO"),
+                    "Prc_Audiometria" => $banco->query("SELECT * FROM Prc_Audiometria"),
+                    "Prc_FCI" => $banco->query("SELECT * FROM Prc_FCI")
+                ]
             ]
         ]);
     }
-    
 }
 router('/', 'ListaDados@get_dados_by_data');
