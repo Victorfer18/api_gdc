@@ -7,7 +7,6 @@ class ListaDados{
         $data = $_REQUEST['data'];
         $base_token = require_once __DIR__ . '/config.php';
         $base_token = $base_token['token'];
-        
         if(empty($get_token) or empty($data)){
             echo json_encode([
                 "next" => false,
