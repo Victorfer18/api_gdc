@@ -5,5 +5,5 @@ return [
     "user" => "u925461440_EvidaMedApi",
     "senha" => 'O>$iBc8P:k5#',
     "banco" => "u925461440_EvidaMed",
-    "token" => "N3uohCJ8kKhTMaNVhIpZU8C1tN7OOBEr7QgFBlVak1I",
+    "token" => "RkV45tWBOhxIA4N2kPo9Q1jfRXxtaMqwSz7vwKKghHY",
 ];
