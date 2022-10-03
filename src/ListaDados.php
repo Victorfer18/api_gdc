@@ -2,7 +2,7 @@
 
 class ListaDados{
     static function get_dados_by_data(){
-        // $banco = new Banco();
+        $banco = new Banco();
         $get_token = $_REQUEST['token'];
         $data = $_REQUEST['data'];
         $base_token = require_once __DIR__ . '/config.php';
