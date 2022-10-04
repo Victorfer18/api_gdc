@@ -31,9 +31,9 @@ class ListaDados{
             "message" => "Todos os Dados",
             "payload" => [
                 "tabelas" => [
-                    "Prc_ASO" => $banco->query("SELECT * FROM Prc_ASO ORDER BY DESC LIMIT 20"),
-                    "Prc_Audiometria" => $banco->query("SELECT * FROM Prc_Audiometria ORDER BY DESC LIMIT 20"),
-                    "Prc_FCI" => $banco->query("SELECT * FROM Prc_FCI ORDER BY DESC LIMIT 20")
+                    "Prc_ASO" => $banco->query("SELECT * FROM Prc_ASO LIMIT 20"),
+                    "Prc_Audiometria" => $banco->query("SELECT * FROM Prc_Audiometria LIMIT 20"),
+                    "Prc_FCI" => $banco->query("SELECT * FROM Prc_FCI LIMIT 20")
                 ]
             ]
         ]);
