@@ -5,8 +5,6 @@ class ListaDados{
         $banco = new Banco();
         $get_token = $_REQUEST['token'];
         $data = $_REQUEST['data'];
-        $base_token = require_once __DIR__ . '/config.php';
-        $base_token = $base_token['token'];
         if(empty($get_token) or empty($data)){
             echo json_encode([
                 "next" => false,
@@ -15,6 +13,8 @@ class ListaDados{
             ]);    
             die;
         }
+        $base_token = require_once __DIR__ . '/config.php';
+        $base_token = $base_token['token'];
         if($get_token != $base_token){
             echo json_encode([
                 "next" => false,
